@@ -1,4 +1,5 @@
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
 _zsh_terraform_workspace() {
   if [[ -d .terraform ]]; then
@@ -7,3 +8,5 @@ _zsh_terraform_workspace() {
     echo -n $workspace
   fi
 }
+
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
